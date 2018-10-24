@@ -19,21 +19,13 @@ import static org.bitcoinj.script.ScriptOpCodes.*;
  */
 public class LinearEquationTransaction extends ScriptTransaction {
 
-    private Integer x=-1424;
-    private Integer y=1460;
-    private Integer fst=36;
-    private Integer lst=2884;
+    private final Integer x=-1424;
+    private final Integer y=1460;
+    private final Integer fst=36;
+    private final Integer lst=2884;
 
     public LinearEquationTransaction(WalletKit walletKit, NetworkParameters parameters) {
         super(walletKit, parameters);
-    }
-
-    private byte[] intToByteArray(int value) {
-        return new byte[] {
-                (byte)(value >>> 24),
-                (byte)(value >>> 16),
-                (byte)(value >>> 8),
-                (byte)value};
     }
 
     @Override

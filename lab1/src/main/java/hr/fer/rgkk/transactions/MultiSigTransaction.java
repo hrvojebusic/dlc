@@ -15,10 +15,10 @@ import static org.bitcoinj.script.ScriptOpCodes.*;
  */
 public class MultiSigTransaction extends ScriptTransaction {
 
-    private ECKey bank;
-    private ECKey fst;
-    private ECKey snd;
-    private ECKey trd;
+    private final ECKey bank;
+    private final ECKey fst;
+    private final ECKey snd;
+    private final ECKey trd;
 
     public MultiSigTransaction(WalletKit walletKit, NetworkParameters parameters) {
         super(walletKit, parameters);
@@ -50,7 +50,7 @@ public class MultiSigTransaction extends ScriptTransaction {
         // TODO: Please be aware of the OP_CHECK_MULTISIG bug!
         // TODO: Create Unlocking script
         TransactionSignature s_b = sign(unsignedTransaction, bank);
-        // Uncomment 1 signature here
+        // Uncomment 1 signature below
         TransactionSignature s_c = sign(unsignedTransaction, fst);
         //TransactionSignature s_c = sign(unsignedTransaction, snd);
         //TransactionSignature s_c = sign(unsignedTransaction, trd);
